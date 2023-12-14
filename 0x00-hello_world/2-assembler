@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Assuming $CFILE contains the name of the C file
+CFILE="main.c"
+
+#Get the base name of the C file without the extension
+BASE_NAME=$(basename "$CFILE" .c)
+
+#Generate the assembly code from the C file
+gcc -S "$CFILE" -o "${BASE_NAME}.s"
+
